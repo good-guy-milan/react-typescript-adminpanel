@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+.forgot {
+  color: $font-gray;
+  font-size: 16rem;
+  line-height: 19rem;
+  text-align: right;
+  cursor: pointer;
+}
+
+.buttons {
+  margin-top: 40rem;
+}
+
+.button {
+  & + .button {
+    margin-top: 30rem;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.textButton {
+  display: block;
+  font-size: 18rem;
+  margin-top: 36rem;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.thanksPage {
+  width: 547rem;
+
+  .button {
+    width: 296rem;
+    margin: 0 auto;
+  }
+}
+
+.verifyText {
+  color: #434343;
+  margin-bottom: 121rem;
+}

@@ -1,0 +1,106 @@
+@import 'variables.scss';
+
+.chartWrap {
+  display: flex;
+}
+
+.chartHalf {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radial {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(rgba(255, 255, 255, .2), transparent);
+  }
+}
+
+.chart {
+  width: 300rem;
+}
+
+.info {
+  flex-basis: 50%;
+  padding: 6rem 30rem 0 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+
+  & + .item {
+    margin-top: 36rem;
+  }
+}
+
+.circleWrap {
+  margin-right: 14rem;
+  flex-shrink: 0;
+}
+
+.circle {
+  margin-top: 10rem;
+  width: 29rem;
+  height: 29rem;
+  border-style: solid;
+  border-width: 7rem;
+  border-radius: 14rem;
+  box-shadow: 0 3rem 6rem rgba(13, 81, 187, .2), inset 0 3rem 6rem rgba(13, 81, 187, .2);
+}
+
+.itemMain {
+  flex-grow: 1
+}
+
+.value {
+  font-weight: bold;
+  font-size: 22rem;
+  line-height: 22rem;
+}
+
+.title {
+  font-size: 18rem;
+  line-height: 18rem;
+  color: $dark-gray;
+  margin: 6rem 0 11rem;
+}
+
+.progress {
+  height: 10rem;
+  width: 100%;
+  border-radius: 5rem;
+  background-color: $font-gray;
+
+  .filled {
+    height: 100%;
+    border-radius: 5rem;
+    box-shadow: 0 3rem 6rem rgba(18, 23, 164, .2);
+  }
+}
+
+@media (max-height: 680px), (min-aspect-ratio: 15/9) {
+  .itemMain {
+    display: block;
+  }
+
+  .value, .title {
+    display: inline-block;
+  }
+
+  .value {
+    margin-right: 20rem;
+  }
+}

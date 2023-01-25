@@ -1,0 +1,68 @@
+@import 'variables.scss';
+
+.modal {
+  width: 441rem;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  padding-bottom: 40rem;
+  margin-bottom: 40rem;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .5;
+    border-bottom: 1px solid $font-gray;
+  }
+}
+
+.modalAvatar {
+  width: 103rem;
+  height: 103rem;
+  border: 1px solid $font-accent;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.modalUserInfo {
+  margin-left: 45rem;
+}
+
+.modalName {
+  font-weight: bold;
+  color: #434343;
+  font-size: 22rem;
+  line-height: 26rem;
+  margin-bottom: 22rem;
+}
+
+.modalEmail {
+  font-size: 16rem;
+  line-height: 19rem;
+  color: $dark-gray;
+  margin-bottom: 12rem;
+}
+
+.modalDate {
+  font-size: 16rem;
+  line-height: 19rem;
+  color: $font-gray;
+}
+
+.modalButton {
+  font-weight: normal;
+  justify-content: space-between;
+  padding: 0 15rem;
+
+  & + .modalButton {
+    margin-top: 15rem;
+  }
+}

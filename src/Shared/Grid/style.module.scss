@@ -1,0 +1,28 @@
+.columns {
+  display: flex;
+
+  > * + * {
+    margin-left: 30rem;
+  }
+}
+
+.smallColumn, .wideColumn {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    flex-basis: 100%;
+
+    &:not(:first-child) {
+      margin-top: 30rem;
+    }
+  }
+}
+
+.smallColumn {
+  flex-basis: 40%;
+}
+
+.wideColumn {
+  flex-basis: 60%;
+}

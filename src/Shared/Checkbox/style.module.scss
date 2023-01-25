@@ -1,0 +1,39 @@
+@import 'variables.scss';
+
+.wrap {
+  display: block;
+  cursor: pointer;
+}
+
+.input {
+  display: none;
+}
+
+.switch {
+  width: 54rem;
+  height: 31rem;
+  border-radius: 16rem;
+  background: $font-gray;
+  padding: 4rem;
+  position: relative;
+  transition: .1s;
+}
+
+.circle {
+  position: absolute;
+  background: white;
+  width: 23rem;
+  height: 23rem;
+  border-radius: 50%;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, .16);
+  left: 4rem;
+  transition: .1s;
+}
+
+.input:checked + .switch {
+  background: $font-accent;
+
+  .circle {
+    left: 50%;
+  }
+}

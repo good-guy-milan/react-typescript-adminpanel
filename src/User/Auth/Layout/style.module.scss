@@ -1,0 +1,21 @@
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F8F8FB;
+}
+
+.wrap {
+  width: 397rem;
+  background: white;
+  box-shadow: 0 4rem 6rem rgba(8, 15, 22, .05);
+  padding: 65rem 50rem 55rem;
+}
+
+.logo {
+  display: block;
+  width: 267rem;
+  margin: 0 auto 66rem;
+}

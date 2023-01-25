@@ -1,0 +1,58 @@
+@import 'variables.scss';
+
+.topBar {
+  height: 116rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50rem 0 25rem;
+  flex-shrink: 0;
+  background: white;
+  box-shadow: 0 10rem 10rem $shadow-color;
+  position: relative;
+  z-index: 1;
+
+  .logo {
+    display: block;
+    height: 53%;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .name {
+      font-size: 18rem;
+      line-height: 22rem;
+    }
+
+    .email {
+      font-size: 16rem;
+      line-height: 19rem;
+      color: $font-gray;
+    }
+
+    .avatar {
+      margin-left: 12rem;
+      width: 50rem;
+      height: 50rem;
+      border: 1px solid #EA8604;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      box-shadow: 0 2rem 6rem rgba(0, 0, 0, .16);
+    }
+  }
+}
+
+@media (min-aspect-ratio: 15/9) {
+  .topBar {
+    height: 90rem;
+  }
+}

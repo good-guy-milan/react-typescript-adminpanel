@@ -1,0 +1,23 @@
+@import 'variables.scss';
+
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.columns {
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.content {
+  flex-grow: 1;
+  overflow: auto;
+  padding: 50rem 50rem 52rem 367rem;
+
+  @media (max-width: 1000px) {
+    padding-left: 137rem;
+  }
+}

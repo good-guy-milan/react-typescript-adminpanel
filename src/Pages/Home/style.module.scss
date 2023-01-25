@@ -1,0 +1,13 @@
+@import 'variables.scss';
+
+.grid {
+  display: grid;
+  min-height: 100%;
+  grid-template-columns: 4fr 6fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 30rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}

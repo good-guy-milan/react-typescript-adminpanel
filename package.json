@@ -1,0 +1,56 @@
+{
+  "name": "phoenix-dao",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:5000",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/remote-redux-devtools": "^0.5.5",
+    "classnames": "^2.2.6",
+    "http-proxy-middleware": "^2.0.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-minimal-pie-chart": "^8.0.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^9.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "remote-redux-devtools": "^0.5.16",
+    "sass": "^1.26.6",
+    "typescript": "~3.8.3"
+  },
+  "scripts": {
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "exclude": [
+    "src/setupProxy.ts"
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

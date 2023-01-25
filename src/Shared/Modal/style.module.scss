@@ -1,0 +1,64 @@
+@import 'variables.scss';
+
+.modalWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, .36);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.modal {
+  background: white;
+  box-shadow: 0 4px 6px rgba(8, 15, 22, .05);
+  width: 670rem;
+  border-radius: 10rem;
+  position: relative;
+  padding: 60rem 50rem 50rem;
+  margin: 50rem 0;
+}
+
+.closeButton {
+  width: 21rem;
+  height: 21rem;
+  position: absolute;
+  top: 20rem;
+  right: 20rem;
+  cursor: pointer;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    width: 25rem;
+    height: 3rem;
+    background: $font-gray;
+    top: 10rem;
+    left: -2rem;
+  }
+
+  &:before {
+    transform: rotate(45deg)
+  }
+
+  &:after {
+    transform: rotate(-45deg)
+  }
+}
+
+.title {
+  font-size: 32rem;
+  color: $font-accent;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}

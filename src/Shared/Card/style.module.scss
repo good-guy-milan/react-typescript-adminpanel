@@ -1,0 +1,58 @@
+@import "variables";
+
+.card {
+  background: white;
+  box-shadow: 0 4rem 6rem $shadow-color;
+  border-radius: 10rem;
+  width: 100%;
+  padding: 59rem 0 35rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 0 50rem;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 32rem;
+  line-height: 1;
+}
+
+.word {
+  color: $font-accent;
+
+  &:first-child {
+    color: $font-dark;
+  }
+
+  & + .word:before {
+    content: ' ';
+    display: inline;
+  }
+}
+
+.content {
+  overflow: auto;
+  flex-grow: 1;
+  padding: 20rem 50rem;
+}
+
+@media (max-height: 700px), (min-aspect-ratio: 15/9) {
+  .card {
+    padding: 30rem 0 0;
+  }
+
+  .content {
+    padding: 15rem 50rem 15rem;
+  }
+
+  .title {
+    font-size: 26rem;
+  }
+}
