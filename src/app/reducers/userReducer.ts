@@ -17,14 +17,14 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    getUserInfo: (state) => {
+    getUserInfo: (state: any) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       return state
     },
-    setUserInfo: (state, action: PayloadAction<any>) => {
+    setUserInfo: (state:any, action: PayloadAction<any>) => {
       state.firstName = action.payload.firstName
       state.lastName = action.payload.lastName
       state.email = action.payload.email
