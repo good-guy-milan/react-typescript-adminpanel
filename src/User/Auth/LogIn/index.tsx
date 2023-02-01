@@ -14,9 +14,44 @@ type Props = {
 }
 
 export default ({ setAccessToken }: Props) => {
-  const [logined, setLogined] = useState(false)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [logined, setLogined] = useState<boolean>(false)
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [isMetamaskInstalled, setIsMetamaskInstalled] = useState<boolean>(false);
+  const [account, setAccount] = useState<string | null>(null);
+
+  const connectWallet = async (): Promise<void> => {
+    (window as any).ethereum
+      .request({
+        method: "eth_requestAccounts",
+      })
+      .then((accounts: string[]) => {
+        setAccount(accounts[0]);
+      })
+      .catch((error: any) => {
+        toast.error(`Something went wrong: ${error}`);
+      });
+    // check if the chain to connect to is installed
+    await (window as any).ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{ chainId: '0x38' }], // chainId must be in hexadecimal numbers
+    }).catch(async (error: any) => {
+      if (error.code === 4902) {
+        await (window as any).ethereum.request({
+          method: 'wallet_addEthereumChain',
+          params: [
+            {
+              chainName: 'Smart Chain',
+              chainId: '0x38',
+              rpcUrls: ['https://bsc-dataseed.binance.org/']
+            }
+          ]
+        });
+      } else {
+        toast.error(`Something went wrong: ${error}`);
+      }
+    });
+  }
 
   const handleLogin = async () => {
     const res: any = await login(email, password);
@@ -38,8 +73,8 @@ export default ({ setAccessToken }: Props) => {
     <div className={style.forgot}>Forgot passport?</div>
     <div className={style.buttons}>
       <Button onClick={() => handleLogin()} className={style.button} primary shadow>Login</Button>
-      <Button component={Link} to={routes.auth.logInWithNumio()} className={style.button} primary outline shadow>
-        Login with Numio
+      <Button onClick={connectWallet} className={style.button} primary outline shadow>
+        Login with MetaMask
       </Button>
       <Link to={routes.auth.signUp()} className={style.center}>
         <div className={style.textButton}>Create account</div>
